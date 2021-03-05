@@ -16,10 +16,10 @@ module PuntoPagosRails
         transaction.id.to_s, transaction.amount_to_s, payable.payment_method)
 
       if !response.success?
-        puts "PPRAILS RESPONSE =====> #{response.inspect}"
+        #puts "PPRAILS RESPONSE =====> #{response.inspect}"
         puts "PPRAILS ERRORS =====> #{response.errors}"
-        puts "PPRAILS PAYABLE =====> #{payable.inspect}"
-        puts "PPRAILS PAYABLE ERRORS =====> #{payable.errors}"
+        #puts "PPRAILS PAYABLE =====> #{payable.inspect}"
+        #puts "PPRAILS PAYABLE ERRORS =====> #{payable.errors}"
         payable.errors.add(:base, I18n.t("punto_pagos_rails.errors.invalid_puntopagos_response"))
         return false
       end
