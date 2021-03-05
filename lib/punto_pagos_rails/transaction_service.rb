@@ -16,6 +16,7 @@ module PuntoPagosRails
         transaction.id.to_s, transaction.amount_to_s, payable.payment_method)
 
       if !response.success?
+        puts "PPRAILS RESPONSE =====> #{response.inspect}"
         payable.errors.add(:base, I18n.t("punto_pagos_rails.errors.invalid_puntopagos_response"))
         return false
       end
@@ -54,10 +55,10 @@ module PuntoPagosRails
 
         if notification.valid?(headers, params)
           complete_transaction(token)
-          { respuesta: SUCCESS_CODE, token: token }
+          { params: params, respuesta: SUCCESS_CODE, token: token }
         else
           reject_transaction(token, error)
-          { respuesta: ERROR_CODE, error: error, token: token }
+          { params: params, respuesta: ERROR_CODE, error: error, token: token }
         end
       end
 
