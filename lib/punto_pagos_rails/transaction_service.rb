@@ -17,7 +17,7 @@ module PuntoPagosRails
 
       if !response.success?
         puts "PPRAILS RESPONSE =====> #{response}"
-        # puts "PPRAILS ERRORS =====> #{response.errors}"
+        puts "PPRAILS RESPONSE INSPECT =====> #{response.inspect}"
         puts "PPRAILS PAYABLE =====> #{payable.inspect}"
         puts "PPRAILS PAYABLE ERRORS =====> #{payable.errors}"
         puts "PPRAILS PAYABLE ERRORS =====> #{payable.errors.inspect}"
