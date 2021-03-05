@@ -20,6 +20,7 @@ module PuntoPagosRails
         # puts "PPRAILS ERRORS =====> #{response.errors}"
         puts "PPRAILS PAYABLE =====> #{payable.inspect}"
         puts "PPRAILS PAYABLE ERRORS =====> #{payable.errors}"
+        puts "PPRAILS PAYABLE ERRORS =====> #{payable.errors.inspect}"
         payable.errors.add(:base, I18n.t("punto_pagos_rails.errors.invalid_puntopagos_response"))
         return false
       end
