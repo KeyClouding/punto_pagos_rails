@@ -17,6 +17,7 @@ module PuntoPagosRails
 
       if !response.success?
         puts "PPRAILS RESPONSE =====> #{response.inspect}"
+        puts "PPRAILS ERRORS =====> #{response.errors}"
         payable.errors.add(:base, I18n.t("punto_pagos_rails.errors.invalid_puntopagos_response"))
         return false
       end
